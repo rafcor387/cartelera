@@ -1,0 +1,149 @@
+/* Reseteo de márgenes y relleno */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo del cuerpo principal */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1c1c1c;
+    color: #fff;
+    background-image: url('img/fondo-cine.jpg'); /* Imagen de fondo de cine */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Cabecera con un efecto de luces de neón */
+header {
+    text-align: center;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+    font-size: 3em;
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0px 0px 15px #ffcc00, 0px 0px 30px #ff9900;
+}
+
+#search {
+    padding: 15px;
+    width: 60%;
+    font-size: 1.1em;
+    margin-top: 20px;
+    border: 2px solid #ffcc00;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+}
+
+#search:focus {
+    outline: none;
+    border-color: #ff9900;
+    box-shadow: 0 0 30px rgba(255, 153, 0, 0.7);
+}
+
+/* Contenedor de la cuadrícula */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo de cada tarjeta de película */
+.movie {
+    background-color: #333;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    display: flex;           /* Flexbox para alinear el contenido */
+    flex-direction: column;  /* Coloca el contenido verticalmente */
+    justify-content: space-between; /* Asegura que el contenido se distribuya correctamente */
+    min-height: 400px;       /* Establece una altura mínima */
+}
+
+.movie img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* El área de detalles siempre tiene suficiente espacio */
+.movie .details {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-top: 2px solid #ffcc00;
+    flex-grow: 1;             /* Permite que crezca si hay más contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye espacio entre los textos */
+}
+
+.movie h2 {
+    color: #ffcc00;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+    line-height: 1.2;          /* Controla la altura de las líneas de texto */
+}
+
+.movie p {
+    color: #ccc;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Efectos de hover */
+.movie:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 30px rgba(255, 204, 0, 0.5);
+}
+
+.movie:hover .details {
+    border-top: 2px solid #ff9900;
+}
+
+/* Fondo animado de luces de neón */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+    animation: pulse 6s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    50% {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
